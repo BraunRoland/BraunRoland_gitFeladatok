@@ -34,11 +34,40 @@ namespace ConsoleApp7
 			Console.WriteLine($"ennyi páros szám van a tömbben: {szamlalo} ");
 		}
 
+		static double F03(int[] tomb)
+		{
+			double atlag = 0;
+			for (int i = 0; i < tomb.Length; i++)
+			{
+				atlag += tomb[i];	
+			}
+			atlag = atlag / tomb.Length;
+			return atlag;
+		}
+
+		static int[] F04(int[] tomb)
+		{
+			int[] paratlanok = new int[10];
+			for (int i = 0; i < tomb.Length; i++)
+			{
+				if (tomb[i]%2==0)
+				{
+					paratlanok[i] = tomb[i]+1;
+				}
+				else
+				{
+					paratlanok[i] = tomb[i];
+				}
+			}
+			return paratlanok;
+		}
+
 		static void Main(string[] args)
 		{
-			int[] tomb = { 2, 12, 56};
+			int[] tomb = {2, 12, 56};
 			F01(tomb); 
 			F02(tomb);
+			Console.WriteLine($"Átlag: {F03(tomb)}");
 			Console.ReadLine();
 		}
 	}
