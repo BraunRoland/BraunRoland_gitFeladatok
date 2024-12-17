@@ -21,7 +21,7 @@ namespace ConsoleApp7
 			};
 		}
 
-		static void F02(int[] tomb)
+		static int F02(int[] tomb)
 		{
 			int szamlalo = 0;
 			for (int i = 0; i < tomb.Length; i++)
@@ -31,7 +31,7 @@ namespace ConsoleApp7
 					szamlalo++;
 				}
 			}
-			Console.WriteLine($"ennyi páros szám van a tömbben: {szamlalo} ");
+			return szamlalo;
 		}
 
 		static double F03(int[] tomb)
@@ -60,6 +60,19 @@ namespace ConsoleApp7
 				}
 			}
 			return paratlanok;
+		}
+
+		static void F05(int[] tomb)
+		{
+			Console.WriteLine($"Ennyi pozitívv szám van a tömben: {F02(tomb)}");
+			Console.WriteLine($"A tömb elemeinek átlaga: {F03(tomb)}");
+			Console.Write("A tömbből alkotott páratlan számok: ");
+			int[] paratlanok = F04(tomb);
+			foreach (int item in paratlanok)
+			{
+				Console.Write(item + ", ");
+			};
+			Console.WriteLine();
 		}
 
 		static void Main(string[] args)
