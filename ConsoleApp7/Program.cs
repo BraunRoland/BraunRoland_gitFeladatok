@@ -12,13 +12,14 @@ namespace ConsoleApp7
 		static void F01(int[] tomb)
 		{
 			Random rnd = new Random();
+			Console.Write("Tömb elemei: ");
 			for (int i = 0; i < tomb.Length; i++)
 			{
 				int szam = rnd.Next(1, 51);
-				Console.Write(tomb[i] + " + " + szam + " = ");
 				tomb[i] += szam;
-				Console.WriteLine(tomb[i]);
+				Console.Write(tomb[i] + ", ");
 			};
+			Console.WriteLine();
 		}
 
 		static int F02(int[] tomb)
@@ -64,7 +65,7 @@ namespace ConsoleApp7
 
 		static void F05(int[] tomb)
 		{
-			Console.WriteLine($"Ennyi pozitívv szám van a tömben: {F02(tomb)}");
+			Console.WriteLine($"Ennyi páratlan szám van a tömben: {F02(tomb)}");
 			Console.WriteLine($"A tömb elemeinek átlaga: {F03(tomb)}");
 			Console.Write("A tömbből alkotott páratlan számok: ");
 			int[] paratlanok = F04(tomb);
@@ -77,10 +78,9 @@ namespace ConsoleApp7
 
 		static void Main(string[] args)
 		{
-			int[] tomb = {2, 12, 56};
-			F01(tomb); 
-			F02(tomb);
-			Console.WriteLine($"Átlag: {F03(tomb)}");
+			int[] szamok = new int[10];
+			F01(szamok); 
+			F05(szamok);
 			Console.ReadLine();
 		}
 	}
